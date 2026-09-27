@@ -1,0 +1,9 @@
+{
+  "recipes": [
+    {"id": "sade", "name": "Sade Tost", "price": 20, "icon": "sade"},
+    {"id": "kasarli", "name": "Kaşarlı Tost", "price": 30, "icon": "kasarli"},
+    {"id": "sucuklu", "name": "Sucuklu Tost", "price": 32, "icon": "sucuklu"},
+    {"id": "karisik", "name": "Karışık Tost", "price": 42, "icon": "karisik"},
+    {"id": "ayran", "name": "Ayran", "price": 12, "icon": "ayran"}
+  ]
+}

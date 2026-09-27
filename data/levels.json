@@ -1,0 +1,55 @@
+{
+  "levels": [
+    {
+      "id": 1,
+      "name": "Akşam Pazarı",
+      "blurb": "Panayır açılıyor. Sade tost, kaşarlı ve ayran.",
+      "duration": 90,
+      "spawn_min": 7.5,
+      "spawn_max": 10.0,
+      "first_spawn": 1.4,
+      "max_customers": 2,
+      "patience": 46,
+      "lives": 4,
+      "cook_scale": 1.0,
+      "burn_window": 8.0,
+      "recipes": ["sade", "ayran", "kasarli"],
+      "weights": [3, 2, 2],
+      "stars": [80, 160, 240]
+    },
+    {
+      "id": 2,
+      "name": "Festival",
+      "blurb": "Işıklar yanıyor. Tüm tostlar ve ayran.",
+      "duration": 100,
+      "spawn_min": 5.8,
+      "spawn_max": 8.0,
+      "first_spawn": 1.2,
+      "max_customers": 3,
+      "patience": 40,
+      "lives": 3,
+      "cook_scale": 1.0,
+      "burn_window": 8.0,
+      "recipes": ["sade", "ayran", "kasarli", "sucuklu", "karisik"],
+      "weights": [2, 2, 2, 2, 2],
+      "stars": [150, 280, 400]
+    },
+    {
+      "id": 3,
+      "name": "Kapanış",
+      "blurb": "Kalabalık ve acele. Karışık tost daha çok isteniyor.",
+      "duration": 110,
+      "spawn_min": 4.2,
+      "spawn_max": 6.0,
+      "first_spawn": 1.0,
+      "max_customers": 3,
+      "patience": 36,
+      "lives": 3,
+      "cook_scale": 1.0,
+      "burn_window": 8.0,
+      "recipes": ["sade", "ayran", "kasarli", "sucuklu", "karisik"],
+      "weights": [1, 2, 2, 2, 3],
+      "stars": [220, 400, 580]
+    }
+  ]
+}
