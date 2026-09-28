@@ -1,0 +1,11 @@
+.godot/
+android/
+*.apk
+*.aab
+*.swp
+.DS_Store
+export/
+build/*.apk
+build/*.aab
+build/*.idsig
+build/ios/

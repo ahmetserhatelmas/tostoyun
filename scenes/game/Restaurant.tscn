@@ -1,0 +1,512 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/game/restaurant.gd" id="1_rest"]
+[ext_resource type="Texture2D" path="res://assets/art/bg_restaurant.png" id="2_bg"]
+[ext_resource type="PackedScene" path="res://scenes/ui/HUD.tscn" id="3_hud"]
+[ext_resource type="Texture2D" path="res://assets/art/prep_plate.png" id="4_plate"]
+
+[node name="Restaurant" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rest")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ToasterSlots" type="Control" parent="."]
+z_index = 12
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Slot0" type="TextureRect" parent="ToasterSlots"]
+visible = false
+layout_mode = 0
+offset_left = 346.0
+offset_top = 656.0
+offset_right = 378.0
+offset_bottom = 726.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot1" type="TextureRect" parent="ToasterSlots"]
+visible = false
+layout_mode = 0
+offset_left = 386.0
+offset_top = 656.0
+offset_right = 418.0
+offset_bottom = 726.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PrepBoard" type="Control" parent="."]
+z_index = 8
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Plate" type="TextureRect" parent="PrepBoard"]
+visible = false
+layout_mode = 0
+offset_left = 444.0
+offset_top = 753.0
+offset_right = 580.0
+offset_bottom = 823.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+texture = ExtResource("4_plate")
+
+[node name="Food" type="TextureRect" parent="PrepBoard"]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = 428.0
+offset_top = 705.0
+offset_right = 596.0
+offset_bottom = 860.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="PrepBoard"]
+visible = false
+z_index = 2
+layout_mode = 0
+offset_left = 430.0
+offset_top = 848.0
+offset_right = 594.0
+offset_bottom = 874.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.28, 0.16, 0.08, 1)
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+text = ""
+
+[node name="Dining" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Seats" type="Control" parent="Dining"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Seat0" type="Control" parent="Dining/Seats"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 8.0
+offset_right = 204.0
+offset_bottom = 258.0
+
+[node name="Seat1" type="Control" parent="Dining/Seats"]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 8.0
+offset_right = 448.0
+offset_bottom = 258.0
+
+[node name="Seat2" type="Control" parent="Dining/Seats"]
+layout_mode = 0
+offset_left = 516.0
+offset_top = 8.0
+offset_right = 692.0
+offset_bottom = 258.0
+
+[node name="Customers" type="Control" parent="Dining"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="HeldChip" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = -118.0
+offset_right = 360.0
+offset_bottom = -58.0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="HeldIcon" type="TextureRect" parent="HeldChip"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 52.0
+offset_bottom = 50.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HeldLabel" type="Label" parent="HeldChip"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 14.0
+offset_right = 330.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(0.28, 0.18, 0.12, 1)
+theme_override_font_sizes/font_size = 18
+text = "Elin boş"
+
+[node name="Kitchen" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -560.0
+offset_bottom = -70.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="ToasterRow" type="Control" parent="Kitchen"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 200.0
+
+[node name="Bread" type="Button" parent="Kitchen/ToasterRow" groups=["stations"]]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 176.0
+offset_bottom = 184.0
+metadata/station_id = "bread"
+
+[node name="Slot0" type="Button" parent="Kitchen/ToasterRow"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 8.0
+offset_right = 352.0
+offset_bottom = 184.0
+
+[node name="Food" type="TextureRect" parent="Kitchen/ToasterRow/Slot0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = 36.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot1" type="Button" parent="Kitchen/ToasterRow"]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 8.0
+offset_right = 504.0
+offset_bottom = 184.0
+
+[node name="Food" type="TextureRect" parent="Kitchen/ToasterRow/Slot1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = 36.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Trash" type="Button" parent="Kitchen/ToasterRow" groups=["stations"]]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 8.0
+offset_right = 692.0
+offset_bottom = 184.0
+metadata/station_id = "trash"
+
+[node name="IngRow" type="Control" parent="Kitchen"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 8.0
+offset_top = 208.0
+offset_right = -8.0
+offset_bottom = 420.0
+
+[node name="Cheese" type="Button" parent="Kitchen/IngRow" groups=["stations"]]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 176.0
+offset_bottom = 196.0
+metadata/station_id = "cheese"
+
+[node name="Sucuk" type="Button" parent="Kitchen/IngRow" groups=["stations"]]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 8.0
+offset_right = 352.0
+offset_bottom = 196.0
+metadata/station_id = "sucuk"
+
+[node name="Ketchup" type="Button" parent="Kitchen/IngRow" groups=["stations"]]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 8.0
+offset_right = 528.0
+offset_bottom = 196.0
+metadata/station_id = "ketchup"
+
+[node name="Ayran" type="Button" parent="Kitchen/IngRow" groups=["stations"]]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 8.0
+offset_right = 696.0
+offset_bottom = 196.0
+metadata/station_id = "ayran"
+
+[node name="CounterHits" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.93
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_default_cursor_shape = 2
+
+[node name="HUD" parent="." instance=ExtResource("3_hud")]
+z_index = 60
+
+[node name="HeldCarry" type="TextureRect" parent="."]
+visible = false
+z_index = 40
+z_as_relative = false
+layout_mode = 0
+offset_right = 148.0
+offset_bottom = 148.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HowTo" type="ColorRect" parent="."]
+z_index = 80
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.1, 0.06, 0.04, 0.55)
+
+[node name="Panel" type="Panel" parent="HowTo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -320.0
+offset_right = 300.0
+offset_bottom = 320.0
+
+[node name="Title" type="Label" parent="HowTo/Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 20.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0.25, 0.16, 0.1, 1)
+theme_override_font_sizes/font_size = 30
+text = "Nasıl oynanır?"
+horizontal_alignment = 1
+
+[node name="Body" type="Label" parent="HowTo/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = 86.0
+offset_right = -28.0
+offset_bottom = -90.0
+theme_override_colors/font_color = Color(0.28, 0.18, 0.12, 1)
+theme_override_font_sizes/font_size = 20
+text = "Müşteri camda bekler, istediği tostu gösterir.
+
+1) Soldaki ekmek kasasına bas, tut, sürükle
+2) Izgaraya bırak (en fazla 2)
+3) 10 saniye kızarsın, sonra ızgaradan al
+4) Çok beklersen kapkara yanar, çöpe at
+5) Tostu ortadaki kesme tahtasına koy
+6) Kaşar, sucuk veya sosu üstüne bırak
+7) Pencereki müşteriye ver
+Doğruysa güler, yanlışsa üzülür
+
+İçecekler dolapta: kola, ayran, su."
+autowrap_mode = 3
+
+[node name="Play" type="Button" parent="HowTo/Panel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -74.0
+offset_right = -40.0
+offset_bottom = -22.0
+text = "Anladım, başla"
+
+[node name="RecipePanel" type="Panel" parent="."]
+z_index = 70
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -210.0
+offset_right = 250.0
+offset_bottom = 210.0
+
+[node name="Margin" type="MarginContainer" parent="RecipePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/margin_left = 22
+theme_override_constants/margin_top = 22
+theme_override_constants/margin_right = 22
+theme_override_constants/margin_bottom = 22
+
+[node name="List" type="VBoxContainer" parent="RecipePanel/Margin"]
+layout_mode = 2
+
+[node name="ResultLayer" type="ColorRect" parent="."]
+z_index = 90
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.12, 0.08, 0.05, 0.45)
+
+[node name="Panel" type="Panel" parent="ResultLayer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = -280.0
+offset_right = 280.0
+offset_bottom = 280.0
+
+[node name="Title" type="Label" parent="ResultLayer/Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 28.0
+offset_bottom = 90.0
+theme_override_colors/font_color = Color(0.25, 0.16, 0.1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Vardiya bitti"
+horizontal_alignment = 1
+
+[node name="Stars" type="HBoxContainer" parent="ResultLayer/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 100.0
+offset_right = 100.0
+offset_bottom = 160.0
+alignment = 1
+
+[node name="Body" type="Label" parent="ResultLayer/Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 20.0
+offset_top = 176.0
+offset_right = -20.0
+offset_bottom = 320.0
+theme_override_colors/font_color = Color(0.3, 0.2, 0.12, 1)
+theme_override_font_sizes/font_size = 18
+text = "Skor"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Again" type="Button" parent="ResultLayer/Panel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -128.0
+offset_right = -24.0
+offset_bottom = -76.0
+text = "Tekrar"
+
+[node name="Menu" type="Button" parent="ResultLayer/Panel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -68.0
+offset_right = -24.0
+offset_bottom = -20.0
+text = "Menü"
+
+[node name="FloatLabel" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 28
+text = "+20"
